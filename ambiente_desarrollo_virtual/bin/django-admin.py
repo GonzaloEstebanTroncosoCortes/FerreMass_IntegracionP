@@ -1,4 +1,4 @@
-#!/home/anyelo/Documents/Int Plataforma/backend/ambiente_desarrollo_virtual/bin/python3
+#!/home/gonza/ferremas/ambiente_desarrollo_virtual/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

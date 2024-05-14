@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/anyelo/Documents/Int Plataforma/backend/ambiente_desarrollo_virtual/bin/python3" "$0" "$@"
-' '''
+#!/home/gonza/ferremas/ambiente_desarrollo_virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

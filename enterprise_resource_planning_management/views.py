@@ -11,8 +11,10 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
 
-
-
 class ProductoDisponibleBodegaViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Producto.objects.filter(stock=0)  # Productos con stock mayor a cero
+    queryset = Producto.objects.filter(stock__gt=0)  # Productos con stock mayor a cero
+    serializer_class = ProductoSerializer
+
+class ProductoNoDisponibleBodegaViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Producto.objects.filter(stock=0)  # Productos con stock igual a cero
     serializer_class = ProductoSerializer
