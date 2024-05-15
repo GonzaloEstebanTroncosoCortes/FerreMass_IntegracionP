@@ -44,3 +44,4 @@ class PrecioProducto(models.Model):
         verbose_name = 'Precio del Producto'
         verbose_name_plural = 'Precios de los Productos'
         ordering = ['-fecha']
+
