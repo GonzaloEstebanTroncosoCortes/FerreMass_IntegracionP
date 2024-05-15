@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Disponibles en Bodega</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'enterprise_resource_planning_management/producto_disponible_bodega.css' %}">
+</head>
+<body>
+    <h1>Productos Disponibles en Bodega</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Código del Producto</th>
+                <th>Marca</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.codigo_producto }}</td>
+                <td>{{ producto.marca }}</td>
+                <td>{{ producto.codigo }}</td>
+                <td>{{ producto.name }}</td>
+                <td>{{ producto.cat.name }}</td>
+                <td>{{ producto.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
