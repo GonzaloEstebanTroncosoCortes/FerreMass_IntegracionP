@@ -31,8 +31,14 @@ SECRET_KEY = '3jb+e8ics9usxma!b$6-$n94^^#-h(96d7s$ezn1(7b_!-g^vy'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_ALLOW_ALL = True
 
+# Configuración de CORS
+CORS_ALLOW_ALL_ORIGINS = True
+# O permitir orígenes específicos
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+# ]
 
 # Application definition
 
@@ -51,7 +57,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
+    'corsheaders',  # Añadido corsheaders aquí
     'django_crontab',
     'djoser',
 ]
@@ -59,7 +65,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Añadido CorsMiddleware aquí
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
