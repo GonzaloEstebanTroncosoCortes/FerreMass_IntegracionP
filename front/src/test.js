@@ -6,7 +6,7 @@ function Test() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/erp/productos_disponibles_bodega/')
+    fetch('http://0.0.0.0:8000/api/v1/erp/productos/?format=json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
@@ -56,8 +56,8 @@ function Test() {
                 <td>{producto.codigo_producto}</td>
                 <td>{producto.marca}</td>
                 <td>{producto.codigo}</td>
-                <td>{producto.nombre}</td>
-                <td>{producto.categoria}</td>
+                <td>{producto.name}</td> {/* Adjusted to match your JSON structure */}
+                <td>{producto.categoria.name}</td> {/* Accessing the name property of categoria */}
                 <td>{producto.stock}</td>
               </tr>
             ))}
@@ -71,4 +71,3 @@ function Test() {
 }
 
 export default Test;
-
